@@ -1,0 +1,7 @@
+.contactRow .btnDeleteContact {
+    visibility: hidden;
+}
+
+.contactRow:hover .btnDeleteContact {
+    visibility: visible;
+}
