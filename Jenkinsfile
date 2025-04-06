@@ -59,11 +59,12 @@ pipeline {
                 withCredentials([azureServicePrincipal(credentialsId: AZURE_CREDENTIALS_ID)]) {
                     bat """
                     powershell Compress-Archive -Path build/* -DestinationPath build.zip -Force
-                    az webapp deploy --resource-group %RESOURCE_GROUP% --name %APP_SERVICE_NAME% --src-path ./publish.zip --type zip
+                    az webapp deploy --resource-group %RESOURCE_GROUP% --name %APP_SERVICE_NAME% --src-path ./build.zip --type zip
                     """
                 }
             }
         }
+
     }
     post {
         success {
