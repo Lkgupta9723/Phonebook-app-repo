@@ -51,9 +51,9 @@ pipeline {
             steps{
                 bat 'npm install'
                 bat 'npm run build'
-                bat 'xcopy /E /I /Y build publish'
             }
         }
+        
         stage('Deploy') {
             steps {
                 withCredentials([azureServicePrincipal(credentialsId: AZURE_CREDENTIALS_ID)]) {
@@ -64,6 +64,7 @@ pipeline {
                 }
             }
         }
+
 
     }
     post {
