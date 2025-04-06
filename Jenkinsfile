@@ -9,7 +9,7 @@ pipeline {
      stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'master', url: 'https://github.com/Lkgupta9723/Phonebook-app-repo.git'
+                git branch: 'main', url: 'https://github.com/Lkgupta9723/Phonebook-app-repo.git'
             }
         }
          stage('Terraform Init') {
